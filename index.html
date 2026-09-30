@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>IT Start</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#" data-page="home">
+    <span class="logo">&lt;/&gt;</span>
+    <strong>IT Start</strong>
+  </a>
+  <nav class="nav">
+    <button data-page="home" class="nav-btn active">Главная</button>
+    <button data-page="path" class="nav-btn">Дорога</button>
+    <button data-page="sandbox" class="nav-btn">Песочница</button>
+    <button data-page="friends" class="nav-btn">Друзья</button>
+    <button data-page="achievements" class="nav-btn">Достижения</button>
+    <button data-page="account" class="nav-btn">Аккаунт</button>
+  </nav>
+  <button id="menuBtn" class="menu-btn">☰</button>
+</header>
+
+<main>
+<section id="home" class="page active">
+  <div class="hero">
+    <div>
+      <span class="pill">⚡ Учись через практику</span>
+      <h1>Программирование как <span>игра</span></h1>
+      <p>HTML, CSS и JavaScript через короткие уроки, игровую дорогу, достижения и живую песочницу.</p>
+      <div class="actions">
+        <button class="primary" data-page="path">Начать путь</button>
+        <button class="secondary" data-page="sandbox">Открыть песочницу</button>
+      </div>
+      <div class="stats">
+        <div><b id="xpHome">420</b><span>XP</span></div>
+        <div><b>5</b><span>дней серия</span></div>
+        <div><b>8</b><span>уроков</span></div>
+      </div>
+    </div>
+    <div class="code-card">
+      <div class="dots">● ● ●</div>
+      <pre>&lt;h1&gt;Привет!&lt;/h1&gt;
+&lt;button onclick="go()"&gt;Старт&lt;/button&gt;
+
+&lt;script&gt;
+function go(){
+  alert("JavaScript работает!")
+}
+&lt;/script&gt;</pre>
+    </div>
+  </div>
+</section>
+
+<section id="path" class="page">
+  <div class="page-head">
+    <div>
+      <span class="pill">🎮 Игровой режим</span>
+      <h2>Дорога обучения</h2>
+      <p>Проходи уровни по порядку, получай XP и открывай новые темы.</p>
+    </div>
+    <div class="xp-box"><b id="xpPath">420 XP</b><span>Уровень 4</span></div>
+  </div>
+
+  <div class="road-wrap">
+    <div class="road-line"></div>
+    <div class="road-node done" data-level="1">
+      <button>✓</button><div><b>HTML: Основы</b><span>Пройдено</span></div>
+    </div>
+    <div class="road-node done right" data-level="2">
+      <button>✓</button><div><b>Теги и текст</b><span>Пройдено</span></div>
+    </div>
+    <div class="road-node current" data-level="3">
+      <button>▶</button><div><b>CSS: Цвета и блоки</b><span>Текущий уровень • +80 XP</span></div>
+    </div>
+    <div class="road-node locked right" data-level="4">
+      <button>🔒</button><div><b>Flexbox</b><span>Сначала пройди предыдущий</span></div>
+    </div>
+    <div class="road-node locked" data-level="5">
+      <button>🔒</button><div><b>JavaScript: Старт</b><span>Недоступно</span></div>
+    </div>
+    <div class="road-node locked right" data-level="6">
+      <button>🔒</button><div><b>DOM и события</b><span>Недоступно</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="sandbox" class="page">
+  <div class="page-head">
+    <div><span class="pill">💻 Практика</span><h2>Песочница</h2><p>Пиши HTML, CSS и JavaScript и сразу смотри результат.</p></div>
+    <div class="actions"><button id="saveCode" class="secondary">Сохранить</button><button id="runCode" class="primary">▶ Запустить</button></div>
+  </div>
+
+  <div class="sandbox">
+    <div class="editor-card">
+      <div class="tabs">
+        <button class="tab active" data-tab="htmlCode">HTML</button>
+        <button class="tab" data-tab="cssCode">CSS</button>
+        <button class="tab" data-tab="jsCode">JS</button>
+      </div>
+      <textarea id="htmlCode" class="editor active"><div class="demo-card">
+  <h1>Мой проект</h1>
+  <p>Редактируй код и нажми «Запустить».</p>
+  <button id="helloBtn">Нажми меня</button>
+</div></textarea>
+      <textarea id="cssCode" class="editor">body{
+  font-family:Arial,sans-serif;
+  padding:40px;
+  background:#eef2f7;
+}
+.demo-card{
+  max-width:360px;
+  margin:auto;
+  padding:24px;
+  border-radius:20px;
+  background:white;
+  box-shadow:0 15px 40px #0002;
+}
+button{
+  border:0;
+  padding:10px 16px;
+  border-radius:10px;
+}</textarea>
+      <textarea id="jsCode" class="editor">document.getElementById("helloBtn").onclick = () => {
+  alert("JavaScript работает!");
+};</textarea>
+    </div>
+    <div class="preview-card">
+      <div class="preview-head"><b>Предпросмотр</b><span>LIVE</span></div>
+      <iframe id="preview"></iframe>
+      <div class="console" id="consoleBox">Консоль готова.</div>
+    </div>
+  </div>
+</section>
+
+<section id="friends" class="page">
+  <div class="page-head">
+    <div><span class="pill">👥 Сообщество</span><h2>Друзья</h2><p>Сравнивай прогресс и учись вместе.</p></div>
+    <button class="primary" id="addFriendBtn">+ Добавить друга</button>
+  </div>
+  <div class="cards" id="friendsList">
+    <article class="friend-card"><div class="avatar">A</div><div><b>Алексей</b><span>860 XP • серия 9 дней</span></div><button class="secondary challenge">Вызов</button></article>
+    <article class="friend-card"><div class="avatar">M</div><div><b>Мария</b><span>710 XP • серия 6 дней</span></div><button class="secondary challenge">Вызов</button></article>
+    <article class="friend-card"><div class="avatar">D</div><div><b>Данил</b><span>590 XP • серия 4 дня</span></div><button class="secondary challenge">Вызов</button></article>
+  </div>
+</section>
+
+<section id="achievements" class="page">
+  <div class="page-head"><div><span class="pill">🏆 Прогресс</span><h2>Достижения</h2><p>Открывай награды за обучение.</p></div></div>
+  <div class="achievement-grid">
+    <article class="achievement unlocked"><div>🚀</div><b>Первый старт</b><span>Завершить первый урок</span></article>
+    <article class="achievement unlocked"><div>💻</div><b>Кодер</b><span>Запустить код в песочнице</span></article>
+    <article class="achievement unlocked"><div>🔥</div><b>Серия 5 дней</b><span>Учиться 5 дней подряд</span></article>
+    <article class="achievement"><div>🏆</div><b>HTML Master</b><span>Завершить HTML-путь</span></article>
+    <article class="achievement"><div>⚡</div><b>JS Explorer</b><span>Открыть JavaScript</span></article>
+    <article class="achievement"><div>👥</div><b>Команда</b><span>Добавить 5 друзей</span></article>
+  </div>
+</section>
+
+<section id="account" class="page">
+  <div class="account-layout">
+    <div class="profile-card">
+      <div class="big-avatar">S</div>
+      <h2 id="profileTitle">Сергей</h2>
+      <p>Уровень 4 • 420 XP</p>
+      <div class="progress"><span style="width:68%"></span></div>
+    </div>
+    <form id="accountForm" class="form-card">
+      <h3>Аккаунт</h3>
+      <label>Имя<input name="name" value="Сергей"></label>
+      <label>Email<input name="email" type="email" value="student@example.com"></label>
+      <label>Цель<select name="goal"><option>Освоить фронтенд</option><option>Сделать свой сайт</option><option>Подготовиться к проекту</option></select></label>
+      <button class="primary">Сохранить</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<div id="toast" class="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
